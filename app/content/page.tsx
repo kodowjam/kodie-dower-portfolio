@@ -6,6 +6,24 @@ import { Navigation } from "@/components/navigation"
 export default function ContentPortfolio() {
   const articles = [
     {
+      publication: "Coder",
+      title: "Building for 2026: Why Anthropic Engineers Are Running Claude Code Remotely",
+      description: "How Anthropic engineers are leveraging remote development environments to run Claude Code at scale.",
+      url: "https://coder.com/blog/building-for-2026-why-anthropic-engineers-are-running-claude-code-remotely-with-c",
+    },
+    {
+      publication: "Coder",
+      title: "The Hidden Risks of AI in Engineering and How to Get Ahead",
+      description: "Examining the security and operational risks of AI adoption in engineering workflows.",
+      url: "https://coder.com/blog/the-hidden-risks-of-ai-in-engineering-and-how-to-get-ahead",
+    },
+    {
+      publication: "Coder",
+      title: "Every Cursor Needs a Coder",
+      description: "Exploring the synergy between AI-powered coding tools and cloud development environments.",
+      url: "https://coder.com/blog/every-cursor-needs-a-coder",
+    },
+    {
       publication: "Fast Company",
       title: "How to Use AI for Good",
       description: "Exploring ethical AI implementation and responsible technology adoption in business.",

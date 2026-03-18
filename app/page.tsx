@@ -140,6 +140,13 @@ export default async function Portfolio() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
+                  <h4 className="font-semibold text-card-foreground">Content & Social Media Manager</h4>
+                  <p className="text-sm text-muted-foreground">Coder • Jun 2025-Present</p>
+                  <p className="text-sm mt-2">
+                    Leading content strategy and social media initiatives for developer-focused cloud development platform.
+                  </p>
+                </div>
+                <div>
                   <h4 className="font-semibold text-card-foreground">Senior Manager, Marketing Communications</h4>
                   <p className="text-sm text-muted-foreground">Anaconda, Inc. • Jun 2022-Jun 2025</p>
                   <p className="text-sm mt-2">
@@ -153,14 +160,6 @@ export default async function Portfolio() {
                   <p className="text-sm mt-2">
                     Built scalable communications infrastructure and automated workflows for rapid response
                     communications.
-                  </p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-card-foreground">Account Executive</h4>
-                  <p className="text-sm text-muted-foreground">LaunchSquad • Oct 2017-Dec 2019</p>
-                  <p className="text-sm mt-2">
-                    Executed strategic PR programs for B2B technology clients across cybersecurity and enterprise
-                    software.
                   </p>
                 </div>
               </CardContent>
