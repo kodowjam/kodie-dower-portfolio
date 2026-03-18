@@ -1,0 +1,159 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to match the provided color palette: olive, cyan, coral, dark teal */
+  --background: #fafbf9;
+  --foreground: #3d5a4e;
+  --card: #ffffff;
+  --card-foreground: #3d5a4e;
+  --popover: #ffffff;
+  --popover-foreground: #3d5a4e;
+  --primary: #b5c18e;
+  --primary-foreground: #3d5a4e;
+  --secondary: #a8d5e2;
+  --secondary-foreground: #3d5a4e;
+  --muted: #f5f7f3;
+  --muted-foreground: #6b7c6b;
+  --accent: #e07a5f;
+  --accent-foreground: #ffffff;
+  --destructive: #e07a5f;
+  --destructive-foreground: #ffffff;
+  --border: #e5e9e3;
+  --input: #f5f7f3;
+  --ring: rgba(181, 193, 142, 0.3);
+  --chart-1: #b5c18e;
+  --chart-2: #a8d5e2;
+  --chart-3: #e07a5f;
+  --chart-4: #3d5a4e;
+  --chart-5: #6b7c6b;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #3d5a4e;
+  --sidebar-primary: #f5f7f3;
+  --sidebar-primary-foreground: #3d5a4e;
+  --sidebar-accent: #b5c18e;
+  --sidebar-accent-foreground: #3d5a4e;
+  --sidebar-border: #e5e9e3;
+  --sidebar-ring: rgba(181, 193, 142, 0.3);
+}
+
+.dark {
+  /* Updated dark mode with the new color palette */
+  --background: #1a2b20;
+  --foreground: #f5f7f3;
+  --card: #2d4a3e;
+  --card-foreground: #f5f7f3;
+  --popover: #2d4a3e;
+  --popover-foreground: #f5f7f3;
+  --primary: #b5c18e;
+  --primary-foreground: #1a2b20;
+  --secondary: #a8d5e2;
+  --secondary-foreground: #1a2b20;
+  --muted: #2d4a3e;
+  --muted-foreground: #b5c18e;
+  --accent: #e07a5f;
+  --accent-foreground: #ffffff;
+  --destructive: #e07a5f;
+  --destructive-foreground: #ffffff;
+  --border: #3d5a4e;
+  --input: #2d4a3e;
+  --ring: rgba(181, 193, 142, 0.3);
+  --chart-1: #b5c18e;
+  --chart-2: #a8d5e2;
+  --chart-3: #e07a5f;
+  --chart-4: #3d5a4e;
+  --chart-5: #f5f7f3;
+  --sidebar: #2d4a3e;
+  --sidebar-foreground: #f5f7f3;
+  --sidebar-primary: #b5c18e;
+  --sidebar-primary-foreground: #1a2b20;
+  --sidebar-accent: #a8d5e2;
+  --sidebar-accent-foreground: #1a2b20;
+  --sidebar-border: #3d5a4e;
+  --sidebar-ring: rgba(181, 193, 142, 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Space Grotesk", ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Simple page transition animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Adding horizontal carousel scrollbar styles */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Smooth scrolling for carousel */
+.overflow-x-auto {
+  scroll-behavior: smooth;
+}
