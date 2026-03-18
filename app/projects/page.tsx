@@ -37,7 +37,7 @@ async function getProjects(): Promise<ProjectData[]> {
       },
       {
         id: 2,
-        name: "Auto List Builder",
+        name: "Auto Listbuilder",
         description:
           "Intelligent lead generation and list building tool that uses AI to identify, qualify, and organize potential customers from various data sources.",
         longDescription:

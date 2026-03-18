@@ -37,7 +37,7 @@ async function getFeaturedProjects(): Promise<ProjectData[]> {
       },
       {
         id: 2,
-        name: "Auto List Builder",
+        name: "Auto Listbuilder",
         description: "Automated lead generation and list building tool",
         longDescription:
           "An automated lead generation system that combines web scraping, AI-powered qualification, and CRM integration.",
