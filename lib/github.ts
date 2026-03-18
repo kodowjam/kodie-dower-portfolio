@@ -50,6 +50,12 @@ const repoMetadata: Record<string, { category: string; longDescription: string; 
       "An intelligent video editing platform that automates the post-production process. Features include automatic scene detection, content-aware cropping, subtitle generation, and optimization for different social media platforms.",
     image: "/ai-project-3.png",
   },
+  "sproutsocial-mcp-server": {
+    category: "MCP Integration",
+    longDescription:
+      "A custom Model Context Protocol (MCP) server for Sprout Social integration. Enables AI agents to interact with Sprout Social's API for social media management, analytics, and automated publishing workflows.",
+    image: "/ai-project-4.png",
+  },
 }
 
 export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {

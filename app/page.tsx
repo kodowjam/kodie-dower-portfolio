@@ -298,6 +298,69 @@ export default async function Portfolio() {
 
           <div className="relative mb-8">
             <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+              {/* Coder */}
+              <Card className="group hover:shadow-lg transition-shadow flex-none w-80 snap-start">
+                <CardHeader>
+                  <CardTitle className="text-lg text-accent">Coder</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-sm">Building for 2026: Why Anthropic Engineers Are Running Claude Code Remotely</h4>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      asChild
+                      className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
+                    >
+                      <a
+                        href="https://coder.com/blog/building-for-2026-why-anthropic-engineers-are-running-claude-code-remotely-with-c"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1"
+                      >
+                        Read Article <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-sm">The Hidden Risks of AI in Engineering</h4>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      asChild
+                      className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
+                    >
+                      <a
+                        href="https://coder.com/blog/the-hidden-risks-of-ai-in-engineering-and-how-to-get-ahead"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1"
+                      >
+                        Read Article <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-sm">Every Cursor Needs a Coder</h4>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      asChild
+                      className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
+                    >
+                      <a
+                        href="https://coder.com/blog/every-cursor-needs-a-coder"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-1"
+                      >
+                        Read Article <ExternalLink className="w-3 h-3" />
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
               {/* Fast Company */}
               <Card className="group hover:shadow-lg transition-shadow flex-none w-80 snap-start">
                 <CardHeader>
