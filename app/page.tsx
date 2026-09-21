@@ -14,8 +14,8 @@ async function getFeaturedProjects(): Promise<ProjectData[]> {
     const projects = repos.map(transformRepoToProject)
     console.log("[v0] Successfully fetched", projects.length, "featured projects")
 
-    // Return the first 3 projects for featured section
-    return projects.slice(0, 3)
+    // Return the first 4 projects for featured section
+    return projects.slice(0, 4)
   } catch (error) {
     console.error("[v0] Error fetching featured projects:", error)
     // Return fallback data
@@ -63,6 +63,21 @@ async function getFeaturedProjects(): Promise<ProjectData[]> {
         lastUpdated: new Date().toISOString(),
         image: "/ai-project-3.png",
         category: "Video Processing",
+      },
+      {
+        id: 4,
+        name: "Sprout Social MCP Server",
+        description: "Custom MCP server enabling AI agents to interact with Sprout Social",
+        longDescription:
+          "A custom Model Context Protocol (MCP) server for Sprout Social integration. Enables AI agents to interact with Sprout Social's API for social media management, analytics, and automated publishing workflows.",
+        technologies: ["TypeScript", "MCP", "AI"],
+        githubUrl: "https://github.com/kodowjam/sproutsocial-mcp-server",
+        liveUrl: null,
+        stars: 0,
+        forks: 0,
+        lastUpdated: new Date().toISOString(),
+        image: "/ai-project-4.png",
+        category: "MCP Integration",
       },
     ]
   }
@@ -141,7 +156,7 @@ export default async function Portfolio() {
               <CardContent className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-card-foreground">Content & Social Media Manager</h4>
-                  <p className="text-sm text-muted-foreground">Coder • Jun 2025-Present</p>
+                  <p className="text-sm text-muted-foreground">Coder • Oct 2025-Present</p>
                   <p className="text-sm mt-2">
                     Leading content strategy and social media initiatives for developer-focused cloud development platform.
                   </p>

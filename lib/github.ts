@@ -31,32 +31,39 @@ const GITHUB_API_BASE = "https://api.github.com"
 const GITHUB_USERNAME = "kodowjam"
 
 // Map of repo names to categories and additional info
-const repoMetadata: Record<string, { category: string; longDescription: string; image: string }> = {
+const repoMetadata: Record<string, { displayName: string; category: string; longDescription: string; image: string }> = {
   "ai-content-pipeline": {
+    displayName: "AI Content Pipeline",
     category: "Content Automation",
     longDescription:
       "A comprehensive content automation system that leverages AI to generate, optimize, and distribute marketing content. Features include content ideation, automated writing, SEO optimization, and multi-channel publishing with performance tracking.",
     image: "/ai-project-1.png",
   },
   "auto-listbuilder": {
+    displayName: "Auto Listbuilder",
     category: "Lead Generation",
     longDescription:
       "An automated lead generation system that combines web scraping, AI-powered qualification, and CRM integration. Uses machine learning to score leads and automatically builds targeted prospect lists for marketing campaigns.",
     image: "/ai-project-2.png",
   },
   "ai-video-editor": {
+    displayName: "AI Video Editor",
     category: "Video Processing",
     longDescription:
       "An intelligent video editing platform that automates the post-production process. Features include automatic scene detection, content-aware cropping, subtitle generation, and optimization for different social media platforms.",
     image: "/ai-project-3.png",
   },
   "sproutsocial-mcp-server": {
+    displayName: "Sprout Social MCP Server",
     category: "MCP Integration",
     longDescription:
       "A custom Model Context Protocol (MCP) server for Sprout Social integration. Enables AI agents to interact with Sprout Social's API for social media management, analytics, and automated publishing workflows.",
     image: "/ai-project-4.png",
   },
 }
+
+// Acronyms that should render fully uppercase when a repo name isn't in repoMetadata
+const ACRONYMS = new Set(["ai", "mcp", "api", "ui", "seo", "crm", "sql"])
 
 export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
   const headers: Record<string, string> = {
@@ -104,6 +111,10 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
 
 export function transformRepoToProject(repo: GitHubRepo): ProjectData {
   const metadata = repoMetadata[repo.name] || {
+    displayName: repo.name
+      .split("-")
+      .map((word) => (ACRONYMS.has(word.toLowerCase()) ? word.toUpperCase() : word.charAt(0).toUpperCase() + word.slice(1)))
+      .join(" "),
     category: "AI/Automation",
     longDescription: repo.description || "An innovative AI project focused on automation and efficiency.",
     image: "/ai-project-1.png",
@@ -121,10 +132,7 @@ export function transformRepoToProject(repo: GitHubRepo): ProjectData {
 
   return {
     id: repo.id,
-    name: repo.name
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" "),
+    name: metadata.displayName,
     description: repo.description || "AI-powered automation tool",
     longDescription: metadata.longDescription,
     technologies: technologies.length > 0 ? technologies : ["Python", "AI"],

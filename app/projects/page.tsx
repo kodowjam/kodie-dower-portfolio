@@ -67,6 +67,22 @@ async function getProjects(): Promise<ProjectData[]> {
         image: "/ai-video-editor-interface.png",
         category: "Video Processing",
       },
+      {
+        id: 4,
+        name: "Sprout Social MCP Server",
+        description:
+          "Custom Model Context Protocol (MCP) server that enables AI agents to interact with Sprout Social's API for social media management and automation.",
+        longDescription:
+          "A custom Model Context Protocol (MCP) server for Sprout Social integration. Enables AI agents to interact with Sprout Social's API for social media management, analytics, and automated publishing workflows.",
+        technologies: ["TypeScript", "MCP", "Node.js", "API Integration"],
+        githubUrl: "https://github.com/kodowjam/sproutsocial-mcp-server",
+        liveUrl: null,
+        stars: 0,
+        forks: 0,
+        lastUpdated: "2024-01-30",
+        image: "/ai-project-4.png",
+        category: "MCP Integration",
+      },
     ]
   }
 }
