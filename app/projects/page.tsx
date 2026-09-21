@@ -75,7 +75,7 @@ async function getProjects(): Promise<ProjectData[]> {
         longDescription:
           "A custom Model Context Protocol (MCP) server for Sprout Social integration. Enables AI agents to interact with Sprout Social's API for social media management, analytics, and automated publishing workflows.",
         technologies: ["TypeScript", "MCP", "Node.js", "API Integration"],
-        githubUrl: "https://github.com/kodowjam/sproutsocial-mcp-server",
+        githubUrl: "https://github.com/kodowjam/sprout-social-mcp-server",
         liveUrl: null,
         stars: 0,
         forks: 0,

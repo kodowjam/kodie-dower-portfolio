@@ -5,6 +5,7 @@ import { ExternalLink, Code, Briefcase, GraduationCap, Star, GitFork } from "luc
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { SocialLinks } from "@/components/social-links"
+import { ScrollCarousel } from "@/components/scroll-carousel"
 import { fetchGitHubRepos, transformRepoToProject, type ProjectData } from "@/lib/github"
 
 async function getFeaturedProjects(): Promise<ProjectData[]> {
@@ -71,7 +72,7 @@ async function getFeaturedProjects(): Promise<ProjectData[]> {
         longDescription:
           "A custom Model Context Protocol (MCP) server for Sprout Social integration. Enables AI agents to interact with Sprout Social's API for social media management, analytics, and automated publishing workflows.",
         technologies: ["TypeScript", "MCP", "AI"],
-        githubUrl: "https://github.com/kodowjam/sproutsocial-mcp-server",
+        githubUrl: "https://github.com/kodowjam/sprout-social-mcp-server",
         liveUrl: null,
         stars: 0,
         forks: 0,
@@ -246,7 +247,7 @@ export default async function Portfolio() {
           </div>
 
           <div className="relative mb-8">
-            <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+            <ScrollCarousel className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
               {featuredProjects.map((project) => (
                 <Card key={project.id} className="group hover:shadow-lg transition-shadow flex-none w-80 snap-start">
                   <CardHeader className="pb-3">
@@ -286,7 +287,7 @@ export default async function Portfolio() {
                   </CardContent>
                 </Card>
               ))}
-            </div>
+            </ScrollCarousel>
 
             <div className="flex justify-center mt-4">
               <p className="text-xs text-muted-foreground">← Scroll to see more projects →</p>
@@ -312,7 +313,7 @@ export default async function Portfolio() {
           </div>
 
           <div className="relative mb-8">
-            <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+            <ScrollCarousel className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
               {/* Coder */}
               <Card className="group hover:shadow-lg transition-shadow flex-none w-80 snap-start">
                 <CardHeader>
@@ -582,7 +583,7 @@ export default async function Portfolio() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
+            </ScrollCarousel>
 
             <div className="flex justify-center mt-4">
               <p className="text-xs text-muted-foreground">← Scroll to see more articles →</p>
