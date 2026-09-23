@@ -188,7 +188,7 @@ export default async function Portfolio() {
           <Card className="max-w-3xl mx-auto">
             <CardContent className="pt-6">
               <p className="text-lg text-muted-foreground leading-relaxed text-center">
-                Strategic communications leader with 8+ years in AI and enterprise tech, adept at distilling complex
+                Strategic communications leader with 10+ years in AI and enterprise tech, adept at distilling complex
                 technical concepts into compelling narratives for senior audiences. Proven track record in boosting
                 brand visibility and media engagement through integrated, performance-driven campaigns. Expert in
                 collaborating with executive and product teams to amplify thought leadership and drive innovative
