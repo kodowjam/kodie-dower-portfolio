@@ -8,6 +8,65 @@ import { SocialLinks } from "@/components/social-links"
 import { ScrollCarousel } from "@/components/scroll-carousel"
 import { fetchGitHubRepos, transformRepoToProject, type ProjectData } from "@/lib/github"
 
+const coderArticles = [
+  {
+    title: "Why Sovereignty in Defense No Longer Means Air-Gapped Infrastructure",
+    url: "https://coder.com/blog/ai-agent-security-sovereignty-defense",
+  },
+  {
+    title: "How Credit Karma Elevated Developer Productivity With Coder",
+    url: "https://coder.com/blog/how-credit-karma-elevated-developer-productivity-with-coder",
+  },
+  {
+    title: "What 100 Engineering Teams Revealed About AI Maturity",
+    url: "https://coder.com/blog/what-100-engineering-teams-revealed-about-ai-maturity-and-what-to-do-about-it",
+  },
+  {
+    title: "Your Developers' Laptops Are the Softest Target In Your Security Stack",
+    url: "https://coder.com/blog/your-developers-laptops-are-the-softest-target-in-your-security-stack",
+  },
+  {
+    title: "What the Claude Code Leak Tells Us About Supply Chain Security",
+    url: "https://coder.com/blog/what-the-claude-code-leak-tells-us-about-supply-chain-security",
+  },
+  {
+    title: "How to Build Faster, Safer Cloud Development Environments on AWS with Coder",
+    url: "https://coder.com/blog/how-to-build-faster-safer-cloud-development-environments-on-aws-with-coder",
+  },
+  {
+    title: "What Happens When You Let the Whole Company Loose on Your Own Product",
+    url: "https://coder.com/blog/what-happens-when-you-let-the-whole-company-loose-on-your-own-product",
+  },
+  {
+    title: "Building for 2026: Why Anthropic Engineers Are Running Claude Code Remotely",
+    url: "https://coder.com/blog/building-for-2026-why-anthropic-engineers-are-running-claude-code-remotely-with-c",
+  },
+  {
+    title: "Financial Services Has an AI Governance Problem",
+    url: "https://coder.com/blog/financial-services-has-an-ai-governance-problem",
+  },
+  {
+    title: "Deploying AI Agents at Scale Without Sacrificing Control & Governance",
+    url: "https://coder.com/blog/deploying-ai-agents-at-scale-without-sacrificing-control-and-governance",
+  },
+  {
+    title: "AI Development Infrastructure: How Enterprises Get Control Without Compromise",
+    url: "https://coder.com/blog/ai-development-infrastructure-how-enterprises-get-control-without-compromise",
+  },
+  {
+    title: "Quantum Development 101: Building Software for the Next Computing Revolution",
+    url: "https://coder.com/blog/quantum-development-101-building-software-for-the-next-computing-revolution",
+  },
+  {
+    title: "The Hidden Risks of AI in Engineering",
+    url: "https://coder.com/blog/the-hidden-risks-of-ai-in-engineering-and-how-to-get-ahead",
+  },
+  {
+    title: "Every Cursor Needs a Coder",
+    url: "https://coder.com/blog/every-cursor-needs-a-coder",
+  },
+]
+
 async function getFeaturedProjects(): Promise<ProjectData[]> {
   try {
     console.log("[v0] Fetching featured projects directly from GitHub service")
@@ -319,60 +378,28 @@ export default async function Portfolio() {
                 <CardHeader>
                   <CardTitle className="text-lg text-accent">Coder</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-sm">Building for 2026: Why Anthropic Engineers Are Running Claude Code Remotely</h4>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      asChild
-                      className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
-                    >
-                      <a
-                        href="https://coder.com/blog/building-for-2026-why-anthropic-engineers-are-running-claude-code-remotely-with-c"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1"
-                      >
-                        Read Article <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </Button>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-sm">The Hidden Risks of AI in Engineering</h4>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      asChild
-                      className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
-                    >
-                      <a
-                        href="https://coder.com/blog/the-hidden-risks-of-ai-in-engineering-and-how-to-get-ahead"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1"
-                      >
-                        Read Article <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </Button>
-                  </div>
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-sm">Every Cursor Needs a Coder</h4>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      asChild
-                      className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
-                    >
-                      <a
-                        href="https://coder.com/blog/every-cursor-needs-a-coder"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1"
-                      >
-                        Read Article <ExternalLink className="w-3 h-3" />
-                      </a>
-                    </Button>
+                <CardContent>
+                  <div className="space-y-4 max-h-64 overflow-y-auto pr-2">
+                    {coderArticles.map((article) => (
+                      <div key={article.url} className="space-y-2">
+                        <h4 className="font-medium text-sm">{article.title}</h4>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          asChild
+                          className="h-auto p-0 text-xs text-muted-foreground hover:text-foreground"
+                        >
+                          <a
+                            href={article.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1"
+                          >
+                            Read Article <ExternalLink className="w-3 h-3" />
+                          </a>
+                        </Button>
+                      </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
